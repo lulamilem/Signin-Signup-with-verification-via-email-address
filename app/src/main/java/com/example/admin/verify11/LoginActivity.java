@@ -1,8 +1,8 @@
 package com.example.admin.verify11;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -33,10 +33,10 @@ public class LoginActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_password);
 
-        txtStatus = (TextView) findViewById(R.id.status);
-        txtDetail = (TextView) findViewById(R.id.detail);
-        edtEmail = (EditText) findViewById(R.id.edt_email);
-        edtPassword = (EditText) findViewById(R.id.edt_password);
+        txtStatus = findViewById(R.id.status);
+        txtDetail = findViewById(R.id.detail);
+        edtEmail = findViewById(R.id.edt_email);
+        edtPassword = findViewById(R.id.edt_password);
 
         findViewById(R.id.btn_email_sign_in).setOnClickListener(this);
         findViewById(R.id.btn_email_create_account).setOnClickListener(this);
@@ -162,7 +162,7 @@ public class LoginActivity extends AppCompatActivity implements
             return false;
         }
 
-        if (password.length() < 9) {
+        if (password.length() < 6) {
             Toast.makeText(getApplicationContext(), "Password is too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
             return false;
         }
